@@ -1,0 +1,29 @@
+function solve(input){
+let n = Number(input.shift());
+let diff = 0;
+let previousDiff = 0;
+let maxDiff = 0;
+let first = Number(input.shift());
+let second = Number(input.shift());
+let sum = first + second;
+let previousSum = sum;
+
+for(let j = 1;j < n;j++){
+  first = Number(input.shift());
+  second = Number(input.shift());
+  sum = first + second;
+  if(previousSum != sum){
+      diff = Math.abs(sum - previousSum)
+      if(maxDiff < diff){
+        maxDiff = diff;
+      }
+    }
+    previousSum = sum;
+  }
+  if (maxDiff == 0){
+  console.log(`Yes, value=${sum}`)
+  }
+  else{
+  console.log(`No, maxdiff=${maxDiff}`)
+  }
+}
