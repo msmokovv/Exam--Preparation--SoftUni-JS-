@@ -1,0 +1,15 @@
+function solve(input){
+  let destination = input.shift();
+  let budjet = Number(input.shift());
+
+  while(destination != "End"){
+    let sum = 0;
+    while(sum < budjet){
+      let saveMoney = Number(input.shift());
+      sum += saveMoney;
+    }
+    console.log(`Going to ${destination}!`);
+    destination = input.shift();
+    budjet = Number(input.shift());
+  }
+}
