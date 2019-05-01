@@ -1,0 +1,19 @@
+function solve(input){
+  let theTicketPrice = Number(input.shift());
+  let theReturnTicketPrice = Number(input.shift());
+  let theTicketPriceForOneMatch = Number(input.shift());
+  let theNumberOfMatches = Number(input.shift());;
+  let thePercentageDiscount = Number(input.shift());
+
+  let friends = 6;
+
+  let theAmountOfAirTickets = friends * (theTicketPrice + theReturnTicketPrice);
+  let theAirlineTicketsDiscount = theAmountOfAirTickets - ((theAmountOfAirTickets / 100) * thePercentageDiscount);
+  let totalTickets = friends * theTicketPriceForOneMatch * theNumberOfMatches;
+  let theTotalAmount = totalTickets + theAirlineTicketsDiscount;
+  let theAmountForFriends = theTotalAmount / friends;
+
+  console.log(`Total sum: ${theTotalAmount.toFixed(2)} lv.`);
+  console.log(`Each friend has to pay ${theAmountForFriends.toFixed(2)} lv.`);
+
+}
