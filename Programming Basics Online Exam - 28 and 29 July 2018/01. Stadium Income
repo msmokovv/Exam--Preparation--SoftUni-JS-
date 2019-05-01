@@ -1,0 +1,12 @@
+function solve([input,input2,input3]){
+  let numberOfStadiumSectors = Number(input);
+  let stadiumCapacity = Number(input2);
+  let realNumberInTheRange = Number(input3);
+  
+  let theTotalRevenue = stadiumCapacity * realNumberInTheRange;
+  let oneSectorRevenue = theTotalRevenue / numberOfStadiumSectors;
+  let moneyForCharity = ((theTotalRevenue - (oneSectorRevenue * 0.75)) / 8);
+ 
+  console.log(`Total income - ${theTotalRevenue.toFixed(2)} BGN`)
+  console.log(`Money for charity - ${moneyForCharity.toFixed(2)} BGN`)
+}
