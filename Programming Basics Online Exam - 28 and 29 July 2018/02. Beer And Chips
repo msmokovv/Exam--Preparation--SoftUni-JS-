@@ -1,0 +1,22 @@
+function solve([input,input2,input3,input4]){
+  let name = String(input);
+  let budget = Number(input2);
+  let numberOfBottles = Number(input3);
+  let numberOfChipsPackages = Number(input4);
+
+  let oneBeer = 1.20;
+  let theTotalBeerPrice = oneBeer * numberOfBottles;
+  
+  let oneChips = (theTotalBeerPrice / 100) * 45;
+  let theTotalChipsPrice = oneChips * numberOfChipsPackages;
+
+  let theTotalAmount = theTotalBeerPrice + Math.ceil(theTotalChipsPrice);
+
+  let final = Math.abs(theTotalAmount - budget);
+  if(theTotalAmount <= budget){
+    console.log(`${name} bought a snack and has ${final.toFixed(2)} leva left.`)
+  }
+  else{
+    console.log(`${name} needs ${final.toFixed(2)} more leva!`)
+  }
+}
