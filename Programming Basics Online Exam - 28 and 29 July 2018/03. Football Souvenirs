@@ -1,0 +1,114 @@
+function solve(input){
+  let team = input.shift();
+  let typeOfSouvenirs = input.shift();
+  let numberOfSouvenirs = Number(input.shift());
+
+  let flags = 0;
+  let caps = 0;
+  let posters = 0;
+  let stickers = 0;
+
+  if(team == "Brazil"){
+          if(typeOfSouvenirs == "flags"){
+            flags = 4.20;
+            let sumFlags = flags * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} flags of Brazil for ${sumFlags.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "caps"){
+            caps = 8.50;
+            let sumCaps = caps * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} caps of Brazil for ${sumCaps.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "posters"){
+            posters = 5.35;
+            let sumPosters = posters * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} posters of Brazil for ${sumPosters.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "stickers"){
+            stickers = 1.20;
+            let sumStickers = stickers * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} stickers of Brazil for ${sumStickers.toFixed(2)} lv.`)
+          }
+          else{
+            console.log("Invalid stock!")
+          }
+        }
+  else if(team == "Denmark"){
+          if(typeOfSouvenirs == "flags"){
+            flags = 3.10;
+            let sumFlags = flags * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} flags of Denmark for ${sumFlags.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "caps"){
+            caps = 6.50;
+            let sumCaps = caps * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} caps of Denmark for ${sumCaps.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "posters"){
+            posters = 4.80;
+            let sumPosters = posters * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} posters of Denmark for ${sumPosters.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "stickers"){
+            stickers = 0.90;
+            let sumStickers = stickers * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} stickers of Denmark for ${sumStickers.toFixed(2)} lv.`)
+          }
+          else{
+            console.log("Invalid stock!")
+          }    
+        }
+  else if(team == "Argentina"){
+          if(typeOfSouvenirs == "flags"){
+            flags = 3.25;
+            let sumFlags = flags * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} flags of Argentina for ${sumFlags.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "caps"){
+            caps = 7.20;
+            let sumCaps = caps * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} caps of Argentina for ${sumCaps.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "posters"){
+            posters = 5.10;
+            let sumPosters = posters * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} posters of Argentina for ${sumPosters.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "stickers"){
+            stickers = 1.25;
+            let sumStickers = stickers * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} stickers of Argentina for ${sumStickers.toFixed(2)} lv.`)
+          }
+          else{
+            console.log("Invalid stock!")
+          }
+        } 
+  else if(team == "Croatia"){
+          if(typeOfSouvenirs == "flags"){
+            flags = 2.75;
+            let sumFlags = flags * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} flags of Croatia for ${sumFlags.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "caps"){
+            caps = 6.90;
+            let sumCaps = caps * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} caps of Croatia for ${sumCaps.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "posters"){
+            posters = 4.95;
+            let sumPosters = posters * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} posters of Croatia for ${sumPosters.toFixed(2)} lv.`)
+          }
+          else if(typeOfSouvenirs == "stickers"){
+            stickers = 1.10;
+            let sumStickers = stickers * numberOfSouvenirs;
+            console.log(`Pepi bought ${numberOfSouvenirs} stickers of Croatia for ${sumStickers.toFixed(2)} lv.`)
+          }
+          else{
+            console.log("Invalid stock!")
+          }
+        }
+  else{
+    console.log("Invalid country!")
+  }
+}
