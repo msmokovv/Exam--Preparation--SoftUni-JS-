@@ -1,0 +1,33 @@
+function solve(input){
+  let nameTeam = input.shift();
+  let match = Number(input.shift());
+
+  let point = 0;
+  let goalPositive = 0; 
+  let goalNegative = 0;
+  
+  for(let i = 1;i <= match;i++){
+    let scoredGoal = Number(input.shift());
+    let receivedGoal = Number(input.shift());
+      if(scoredGoal > receivedGoal){
+        point += 3;
+        goalPositive += scoredGoal - receivedGoal;
+      }
+      else if(scoredGoal == receivedGoal){
+        point += 1;
+        goalPositive += 0;
+      }
+      else if(scoredGoal < receivedGoal){
+        point += 0;
+        goalNegative -= scoredGoal - receivedGoal;
+      }
+    }
+      if(goalPositive >= goalNegative){
+      console.log(`${nameTeam} has finished the group phase with ${point} points.`)
+      console.log(`Goal difference: ${goalPositive - goalNegative}.`)
+      }
+      else{
+      console.log(`${nameTeam} has been eliminated from the group phase.`)
+      console.log(`Goal difference: ${goalPositive - goalNegative}.`)
+      }
+    }
