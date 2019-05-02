@@ -1,0 +1,25 @@
+function solve(input){
+  let num = Number(input.shift());
+   
+  let counter = 0;
+    
+  for(let i = 'B'.charCodeAt();i <= 'L'.charCodeAt();i+=2){
+      for(let j = 'f'.charCodeAt();j >= 'a'.charCodeAt();j--){
+        for(let m = 'A'.charCodeAt();m <= 'C'.charCodeAt();m++){
+          for(let k = 1;k <= 10;k++){
+            for(let z = 10;z >= 1;z--){
+             counter++;
+              
+              if(counter == num){
+                let price = i + j + m + k + z;
+                let result = String.fromCharCode(i) + String.fromCharCode(j) +String.fromCharCode(m) + k + z;
+                  console.log(`Ticket combination: ${result} `);
+                  console.log(`Prize: ${price} lv.`)
+                break;
+                }
+            }
+          }
+        }
+      }
+    }  
+  }
