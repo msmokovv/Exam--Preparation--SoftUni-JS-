@@ -1,0 +1,28 @@
+function solve(input){
+  let nameTeam = input.shift();
+  let match = Number(input.shift());
+
+  let minute = 0;
+  let penalties = 0;
+  let additionalTime = 0;
+
+  for(let i = 1;i <= match;i++){
+    let timeMatch = Number(input.shift());
+  
+      if(timeMatch > 90 && timeMatch <= 120){
+        additionalTime++;
+        minute += timeMatch; 
+      }
+      else if(timeMatch > 120){
+        penalties++;
+        minute += timeMatch;
+      }
+      else if(timeMatch <= 90){
+        minute += timeMatch;
+      }
+    }
+    
+    console.log(`${nameTeam} has played ${minute} minutes. Average minutes per game: ${(minute / match).toFixed(2)}`)
+    console.log(`Games with penalties: ${penalties}`)
+    console.log(`Games with additional time: ${additionalTime}`)
+  }
