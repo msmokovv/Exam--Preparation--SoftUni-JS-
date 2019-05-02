@@ -1,0 +1,38 @@
+function solve(input){
+  let budget = Number(input.shift());
+  let items = Number(input.shift());
+
+  let money = 0;
+  let item = 0;
+
+  for(let i = 1;i <= items;i++){
+    let oneItem = input.shift();
+      
+      if(oneItem == "hoodie"){
+        money += 30;
+        item++;
+      }
+      else if(oneItem == "keychain"){
+        money += 4;
+        item++;
+      }
+      else if(oneItem == "T-shirt"){
+        money += 20;
+        item++;
+      }
+      else if(oneItem == "flag"){
+        money += 15;
+        item++;
+      }
+      else if(oneItem == "sticker"){
+        money += 1;
+        item++;
+      }
+    }
+      if(budget >= money){
+      console.log(`You bought ${item} items and left with ${budget - money} lv.`)
+      }
+      else{
+        console.log(`Not enough money, you need ${money - budget} more lv.`)
+      }
+    }
