@@ -1,0 +1,36 @@
+function solve(input){
+  let winner = ``;
+  let maxGoals = -1;
+  let ishatTrick = false;
+   
+  while(true){
+    let name = input.shift();
+
+    if(name == "END"){
+      break;
+    }
+    
+    let goals = Number(input.shift());
+    
+    if(goals > maxGoals){
+      winner = name;
+      maxGoals = goals;
+      
+      if(goals >= 3){
+        ishatTrick = true;
+      }
+    }
+    
+    if(goals >= 10){
+      break;
+    }
+  }
+  console.log(`${winner} is the best player!`);
+
+  if (ishatTrick){
+    console.log(`He has scored ${maxGoals} goals and made a hat-trick !!!`)
+  }
+  else {
+    console.log(`He has scored ${maxGoals} goals.`)
+  }
+}
