@@ -1,0 +1,54 @@
+
+function solve(input){
+  let firstNumber = Number(input.shift());
+  let secondNumber = Number(input.shift());
+  let thirdNumber = Number(input.shift());
+  let fourNumber = Number(input.shift());
+
+  let currentCombination = 0;
+
+  for (let K = firstNumber; K <= 8; K++)
+  {
+
+      for (let L = 9; L >= secondNumber; L--)
+      {
+          for (let M = thirdNumber; M <= 8; M++)
+          {
+              for (let N = 9; N >= fourNumber; N--)
+              {
+
+
+                  if (K == M && L == N && K % 2 == 0 && L % 2 != 0)
+                  {
+
+                      console.log("Cannot change the same player.");
+                  }
+                  else if (K % 2 == 0 && L % 2 != 0 && M % 2 == 0 && N % 2 != 0)
+                  {
+
+                      console.log(`${K}${L} - ${M}${N}`);
+                      currentCombination++;
+                  }
+                  if (currentCombination == 6)
+                  {
+      break;
+                  }
+              }
+              if (currentCombination == 6)
+              {
+                  break;
+              }
+
+          }
+          if (currentCombination == 6)
+          {
+              break;
+          }
+      }
+      if (currentCombination == 6)
+      {
+          break;
+      }
+  }
+}
+solve([7,6,8,5]);
