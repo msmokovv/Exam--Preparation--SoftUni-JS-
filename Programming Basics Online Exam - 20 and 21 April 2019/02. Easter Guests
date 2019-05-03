@@ -1,0 +1,20 @@
+function solve(input){
+  let numberOfQuests = Number(input.shift());
+  let budget = Number(input.shift());
+  
+  let cake = Math.ceil(numberOfQuests / 3);
+  let needEgg = numberOfQuests * 2;
+  let priceCake = cake * 4;
+  let priceEgg = needEgg * 0.45;
+  let allPrice = priceCake + priceEgg;
+  
+  let price = Math.abs(allPrice - budget)
+  if(allPrice <= budget){
+    console.log(`Lyubo bought ${cake} Easter bread and ${needEgg} eggs.`);
+    console.log(`He has ${(price).toFixed(2)} lv. left.`);
+  }
+  else{
+    console.log(`Lyubo doesn't have enough money.`);
+    console.log(`He needs ${price.toFixed(2)} lv. more.`);
+  }
+}
