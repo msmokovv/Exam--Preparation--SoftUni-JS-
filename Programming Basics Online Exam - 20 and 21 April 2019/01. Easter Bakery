@@ -1,0 +1,19 @@
+function solve(input){
+  let priceFlourOneKilograms = Number(input.shift());
+  let allKilogramsFlour = Number(input.shift());
+  let sugarKilograms = Number(input.shift());
+  let numberOfEggs = Number(input.shift());
+  let mayaPackages = Number(input.shift());
+  
+  let priceSugar = priceFlourOneKilograms * 0.75;
+  let priceEgg = priceFlourOneKilograms * 1.1;
+  let priceMaya = priceSugar * 0.2;
+  
+  let sumFlour = priceFlourOneKilograms * allKilogramsFlour;
+  let sumEgg = priceEgg * numberOfEggs;
+  let sumSugar = priceSugar * sugarKilograms;
+  let sumMaya = mayaPackages * priceMaya;
+
+  let sumAll = sumFlour + sumEgg + sumSugar + sumMaya;
+  console.log(sumAll.toFixed(2));
+}
