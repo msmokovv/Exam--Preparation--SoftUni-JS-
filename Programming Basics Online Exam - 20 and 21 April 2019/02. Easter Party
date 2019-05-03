@@ -1,0 +1,27 @@
+function solve(input){
+  let numberOfQuests = Number(input.shift());
+  let priceCoverPerPerson = Number(input.shift());
+  let budget = Number(input.shift());
+  
+  let percent = 0;
+  let priceCake = (budget / 100) * 10;
+
+            if(numberOfQuests >= 10 && numberOfQuests <= 15){
+              percent = 15;
+            }
+            else if(numberOfQuests > 15 && numberOfQuests <= 20){
+              percent = 20;
+            }
+            else if(numberOfQuests > 20){
+              percent = 25;
+            }
+            let afterPercent = priceCoverPerPerson - (priceCoverPerPerson / 100 * percent);
+            let allSum = numberOfQuests * afterPercent + priceCake;
+                
+                if(allSum < budget){
+                  console.log(`It is party time! ${(budget - allSum).toFixed(2)} leva left.`)
+                }
+                else{
+                  console.log(`No party! ${(allSum - budget).toFixed(2)} leva needed.`)
+                }
+            }
