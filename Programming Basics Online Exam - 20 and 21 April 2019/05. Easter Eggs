@@ -1,0 +1,44 @@
+
+function solve(input){
+  let piecesColorEgg = Number(input.shift());
+
+  let max = 0;
+
+  let counterRed = 0;
+  let counterOrange = 0;
+  let counterBlue = 0;
+  let counterGreen = 0;
+
+  for(let i = 1;i <= piecesColorEgg;i++){
+    color = input.shift();
+      if(color == "red"){
+        counterRed++;
+        max++;
+      }
+      if(color == "orange"){
+        counterOrange++;
+        max++;
+      }
+      if(color == "blue"){
+        counterBlue++;
+        max++;
+      }
+      if(color == "green"){
+        counterGreen++;
+        max++;
+      }
+    }
+      console.log(`Red eggs: ${counterRed}`);
+      console.log(`Orange eggs: ${counterOrange}`);
+      console.log(`Blue eggs: ${counterBlue}`);
+      console.log(`Green eggs: ${counterGreen}`);
+}    
+solve([7,
+  "orange",
+  "blue",
+  "green",
+  "green",
+  "blue",
+  "red",
+  "green",
+  ]);
