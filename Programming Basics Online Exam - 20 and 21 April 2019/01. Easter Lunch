@@ -1,0 +1,13 @@
+function solve(input){
+  let cake = Number(input.shift());
+  let egg = Number(input.shift());
+  let cookies = Number(input.shift());
+  
+  let priceCake = cake * 3.20;
+  let priceEgg = egg * 4.35;
+  let priceCookies = cookies * 5.40;
+  let pricePaintEgg = egg * 12 * 0.15;
+  let sum = priceCake + priceEgg + priceCookies + pricePaintEgg;
+  
+  console.log(sum.toFixed(2));
+}
