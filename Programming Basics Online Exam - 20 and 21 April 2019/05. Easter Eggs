@@ -1,44 +1,47 @@
-
-function solve(input){
-  let piecesColorEgg = Number(input.shift());
-
-  let max = 0;
-
-  let counterRed = 0;
-  let counterOrange = 0;
-  let counterBlue = 0;
-  let counterGreen = 0;
-
-  for(let i = 1;i <= piecesColorEgg;i++){
-    color = input.shift();
-      if(color == "red"){
-        counterRed++;
-        max++;
-      }
-      if(color == "orange"){
-        counterOrange++;
-        max++;
-      }
-      if(color == "blue"){
-        counterBlue++;
-        max++;
-      }
-      if(color == "green"){
-        counterGreen++;
-        max++;
-      }
+function easterEggs(eggsCount, eggsArray) {
+    let redEggsCount = 0;
+    let orangeEggsCount = 0;
+    let blueEggsCount = 0;
+    let greenEggsCount = 0;
+ 
+    for (let i = 0; i < eggsCount; i++) {
+        if(eggsArray[i] === "red") {
+            redEggsCount += 1;
+        }
+        else if(eggsArray[i] === "orange") {
+            orangeEggsCount += 1;
+        }
+        else if(eggsArray[i] === "blue") {
+            blueEggsCount += 1;
+        }
+        else if(eggsArray[i] === "green") {
+            greenEggsCount += 1;
+        }
     }
-      console.log(`Red eggs: ${counterRed}`);
-      console.log(`Orange eggs: ${counterOrange}`);
-      console.log(`Blue eggs: ${counterBlue}`);
-      console.log(`Green eggs: ${counterGreen}`);
-}    
-solve([7,
-  "orange",
-  "blue",
-  "green",
-  "green",
-  "blue",
-  "red",
-  "green",
-  ]);
+ 
+    let maxEggsCount = Math.max(redEggsCount, orangeEggsCount, blueEggsCount, greenEggsCount);
+    let maxEggsName = getMaxEggsCountName(maxEggsCount, redEggsCount, orangeEggsCount, blueEggsCount, greenEggsCount);
+ 
+    console.log("Red Eggs: " + redEggsCount + "\n" +
+                "Orange Eggs: " + orangeEggsCount + "\n" +
+                "Blue Eggs: " + blueEggsCount + "\n" +
+                "Green Eggs: " + greenEggsCount + "\n" +
+                "Max Eggs: " + maxEggsCount + " -> " + maxEggsName);
+}
+ 
+function getMaxEggsCountName(maxEggsCount, redEggsCount, orangeEggsCount, blueEggsCount, greenEggsCount) {
+    if(maxEggsCount === redEggsCount) {
+        return "red";
+    }
+    else if(maxEggsCount === orangeEggsCount) {
+        return "orange";
+    }
+    else if(maxEggsCount === blueEggsCount) {
+        return "blue";
+    }
+    else if(maxEggsCount === greenEggsCount) {
+        return "green";
+    }
+}
+ 
+easterEggs(5, ["red", "orange", "blue", "red", "red"]);
