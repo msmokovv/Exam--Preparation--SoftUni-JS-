@@ -1,0 +1,31 @@
+function solve(input){
+    let piecesCake = Number(input.shift());
+  
+    let maxSugar = 0;
+    let maxFlour = 0;
+    
+    let maxSugarGrams = 0;
+    let maxFlourGrams = 0;
+    
+    let sugarOnePacket = 950;
+    let flourOnePacekt = 750;
+    
+    for(let i = 1;i <= piecesCake;i++){
+    sugar = Number(input.shift());
+    if(maxSugarGrams < sugar){
+     maxSugarGrams = sugar;
+    }
+    flour = Number(input.shift());
+    if(maxFlourGrams < flour){
+    maxFlourGrams = flour;
+    }
+    maxSugar += sugar;
+    maxFlour += flour;
+  }
+    let packetSugar = Math.ceil(maxSugar / sugarOnePacket);
+    let packetFlour = Math.ceil(maxFlour / flourOnePacekt);
+  
+  console.log(`Sugar: ${packetSugar}`);
+  console.log(`Flour: ${packetFlour}`);
+  console.log(`Max used flour is ${maxFlourGrams} grams, max used sugar is ${maxSugarGrams} grams.`)
+} 
