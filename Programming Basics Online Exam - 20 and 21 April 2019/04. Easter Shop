@@ -2,16 +2,24 @@ function solve(input){
     let eggShop = Number(input.shift());
    
     let command = input.shift();
-
-    
-    while (command != "Close"){
-      if(eggShop <= 0){
-        console.log(`Not enough eggs in store!`);
-        console.log(`You can buy only ${eggShop + egg}.`);
-        return;
-      }
-          if(command == "Buy"){
+ 
+    eggBuy=0;
+    while (true){
+        if (command=="Close"){
+            console.log(`Store is closed!`);
+            console.log(`${eggBuy} eggs sold.`);
+            return;
+        }
+   
+        if(command == "Buy"){
             egg = Number(input.shift());
+                if (eggShop-egg<0){
+                    console.log(`Not enough eggs in store!`);
+                    console.log(`You can buy only ${eggShop }.`);
+                   
+                    return;
+                }
+            eggBuy+=egg;
             eggShop = eggShop - egg;
           }
           else if(command == "Fill"){
@@ -19,18 +27,8 @@ function solve(input){
             eggShop = eggShop + egg;
           }
     command = input.shift();
-      }
-    if(egg > eggShop){
-      console.log(`Store is closed!`);
-      console.log(`${eggShop + egg} eggs sold.`)
     }
+   
+   
+     
 }
-  solve([20,
-    "Fill",
-    30,
-    "Buy",
-    15,
-    "Buy",
-    20,
-    "Close"
-]);
